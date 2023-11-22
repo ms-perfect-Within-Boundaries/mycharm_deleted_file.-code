@@ -4,11 +4,9 @@
             User Avatar
         </h2>
 
-        <!-- <img class="w-8 h-8" src="{{ /storage/user->avatar }}" alt="user avatar"> --> 
-
-        
-        <img class="w-8 h-8" src="{/storage/->user->avatar}" alt="user avatar">
-
+        <div>
+        <br><img class="w-8 h-8" src="{{ "/storage/$user->avatar" }}" alt="user avatar">
+        </div>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
             Add or update Avatar
@@ -18,7 +16,7 @@
     <div class="text-red-500">
         {{ session('message') }}
     </div>
-@endif
+    @endif
 
   
     <form method="post" action="{{ route('profile.avatar') }}" class="mt-6 space-y-6" enctype="multipart/form-data">

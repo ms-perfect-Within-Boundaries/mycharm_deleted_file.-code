@@ -13,7 +13,7 @@ class AvatarController extends Controller
     public function update(UpdateAvatarRequest $request)
     {  
         $path=Storage::disk('public')->put('avatars',$request->file('avatar')) ;
-        dd($path);
+        //dd($path);
         $path = $request->file('avatar')->store('avatars','public');
         
         if($old_avatar=$request->user()->avatar){
